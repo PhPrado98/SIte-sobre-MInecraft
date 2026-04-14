@@ -1,11 +1,154 @@
-h1{
-    font-weight: 700;
+:root {
+    --mc-green: #558d2e;
+    --mc-dirt: #866043;
+    --mc-stone: #7a7a7a;
+    --mc-dark: #1e1e1e;
+    --diamond: #4de1ff;
+    --transition: all 0.3s ease;
 }
 
-p{
-    text-align: center;
+body {
+    font-family: 'Poppins', sans-serif;
+    background-color: var(--mc-dark);
+    color: white;
+    margin: 0;
+    padding: 0;
 }
 
-h1{
+header {
+    background: linear-gradient(rgba(0,0,0,0.8), rgba(0,0,0,0.8)), 
+                url('https://www.minecraft.net/content/dam/games/minecraft/key-art/MC-Support-Vanilla-Update-1280x720.jpg');
+    background-size: cover;
+    background-position: center;
+    padding: 60px 20px;
     text-align: center;
+    border-bottom: 6px solid var(--mc-green);
+}
+
+header h1 {
+    font-family: 'Press Start 2P', cursive;
+    font-size: 2.5rem;
+    color: white;
+    text-shadow: 4px 4px #000;
+    margin: 0;
+}
+
+.container {
+    max-width: 1100px;
+    margin: 20px auto;
+    padding: 20px;
+}
+
+/* Menu de Materiais */
+.material-selector {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    flex-wrap: wrap;
+    margin-bottom: 40px;
+}
+
+.tier-btn {
+    padding: 12px 18px;
+    border: none;
+    cursor: pointer;
+    font-family: 'Press Start 2P', cursive;
+    font-size: 0.65rem;
+    transition: var(--transition);
+    border-bottom: 4px solid rgba(0,0,0,0.4);
+    border-radius: 4px;
+}
+
+.tier-btn:hover { transform: translateY(-3px); filter: brightness(1.2); }
+
+.wood { background-color: #a07649; color: white; }
+.stone { background-color: #888; color: white; }
+.iron { background-color: #ddd; color: #333; }
+.gold { background-color: #ffd700; color: #333; }
+.diamond { background-color: #4de1ff; color: #333; }
+.netherite { background-color: #443a3b; color: #fff; }
+
+/* Grid de Exibição */
+.display-section {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 25px;
+}
+
+.item-card {
+    background: rgba(255, 255, 255, 0.05);
+    border: 2px solid #444;
+    border-radius: 12px;
+    padding: 25px;
+    text-align: center;
+    transition: var(--transition);
+}
+
+.item-card h2 {
+    font-family: 'Press Start 2P', cursive;
+    font-size: 0.9rem;
+    margin-bottom: 30px;
+}
+
+.item-visuals {
+    display: flex;
+    justify-content: space-around;
+    margin-bottom: 30px;
+}
+
+.item-slot p {
+    font-size: 0.8rem;
+    margin-top: 10px;
+    color: #aaa;
+}
+
+.mc-item {
+    width: 80px;
+    height: 80px;
+    image-rendering: pixelated;
+    transition: transform 0.3s;
+}
+
+.mc-item:hover { transform: scale(1.1); }
+
+/* Barras de Status */
+.stats-container {
+    text-align: left;
+}
+
+.stat-group {
+    margin-bottom: 15px;
+}
+
+.stat-group label {
+    font-size: 0.85rem;
+    display: block;
+    margin-bottom: 5px;
+}
+
+.stats-bar {
+    background: #333;
+    height: 12px;
+    border-radius: 6px;
+    overflow: hidden;
+}
+
+.fill {
+    height: 100%;
+    background: var(--mc-green);
+    width: 0%;
+    transition: width 1s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+footer {
+    text-align: center;
+    padding: 50px;
+    color: #666;
+    font-size: 0.9rem;
+}
+
+/* Responsividade */
+@media (max-width: 850px) {
+    .display-section { grid-template-columns: 1fr; }
+    header h1 { font-size: 1.5rem; }
 }

@@ -1,21 +1,88 @@
-
-<html lang="en">
-
+<!DOCTYPE html>
+<html lang="pt-br">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <link rel="stylesheet" href="style.css" />
-  <title>Browser</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Minecraft: Guia de Equipamentos</title>
+    <!-- Fontes Estilizadas -->
+    <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&family=Poppins:wght@300;400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
 </head>
-
 <body>
-  <h1>
-    Minecraft
-  </h1>
-  <p>
-    suas ferramentas e outras ferramentas
-  </p>
-  <script src="script.js"></script>
-</body>
 
+<header>
+    <h1>MINECRAFT</h1>
+    <p>Guia de Ferramentas e Armaduras</p>
+</header>
+
+<main class="container">
+    <!-- Seletor de Materiais -->
+    <nav class="material-selector">
+        <button class="tier-btn wood" onclick="updateTier('wood')">MADEIRA</button>
+        <button class="tier-btn stone" onclick="updateTier('stone')">PEDRA</button>
+        <button class="tier-btn iron" onclick="updateTier('iron')">FERRO</button>
+        <button class="tier-btn gold" onclick="updateTier('gold')">OURO</button>
+        <button class="tier-btn diamond" onclick="updateTier('diamond')">DIAMANTE</button>
+        <button class="tier-btn netherite" onclick="updateTier('netherite')">NETHERITE</button>
+    </nav>
+
+    <div class="display-section">
+        <!-- Card de Ferramentas -->
+        <section class="item-card">
+            <h2 id="tier-title-tools">Ferramentas</h2>
+            <div class="item-visuals">
+                <div class="item-slot">
+                    <img id="img-pickaxe" src="" class="mc-item" alt="Picareta">
+                    <p>Picareta</p>
+                </div>
+                <div class="item-slot">
+                    <img id="img-sword" src="" class="mc-item" alt="Espada">
+                    <p>Espada</p>
+                </div>
+            </div>
+            <div class="stats-container">
+                <div class="stat-group">
+                    <label>Durabilidade: <span id="stat-durability">0</span></label>
+                    <div class="stats-bar"><div id="bar-durability" class="fill"></div></div>
+                </div>
+                <div class="stat-group">
+                    <label>Dano de Ataque: <span id="stat-damage">0</span></label>
+                    <div class="stats-bar"><div id="bar-damage" class="fill"></div></div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Card de Armadura -->
+        <section class="item-card">
+            <h2 id="tier-title-armor">Armadura</h2>
+            <div class="item-visuals">
+                <div class="item-slot">
+                    <img id="img-helmet" src="" class="mc-item" alt="Capacete">
+                    <p>Capacete</p>
+                </div>
+                <div class="item-slot">
+                    <img id="img-chestplate" src="" class="mc-item" alt="Peitoral">
+                    <p>Peitoral</p>
+                </div>
+            </div>
+            <div class="stats-container">
+                <div class="stat-group">
+                    <label>Defesa: <span id="stat-armor">0</span></label>
+                    <div class="stats-bar"><div id="bar-armor" class="fill"></div></div>
+                </div>
+                <div class="stat-group">
+                    <label>Dureza: <span id="stat-toughness">0</span></label>
+                    <div class="stats-bar"><div id="bar-toughness" class="fill"></div></div>
+                </div>
+            </div>
+        </section>
+    </div>
+</main>
+
+<footer>
+    <p>Wiki Interativa de Minecraft &copy; 2024</p>
+</footer>
+
+<script src="script.js"></script>
+</body>
 </html>
